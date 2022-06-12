@@ -22,4 +22,5 @@ func Connect() {
 	DB.AutoMigrate(&models.Book{})
 	DB.AutoMigrate(&models.Author{})
 	DB.AutoMigrate(&models.Publisher{})
+	DB.AutoMigrate(&models.Genre{})
 }
