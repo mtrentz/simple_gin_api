@@ -20,4 +20,6 @@ func Connect() {
 		log.Panic("Error connecting to the database")
 	}
 	DB.AutoMigrate(&models.Book{})
+	DB.AutoMigrate(&models.Author{})
+	DB.AutoMigrate(&models.Publisher{})
 }

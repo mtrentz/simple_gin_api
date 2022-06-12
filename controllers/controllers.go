@@ -10,7 +10,9 @@ import (
 
 func GetAllBooks(c *gin.Context) {
 	var books []models.Book
-	database.DB.Find(&books)
+	// database.DB.Find(&books)
+	// database.DB.Joins("Publisher").Find(&books)
+	database.DB.Preload("Publisher").Preload("Genres").Preload("Author").Find(&books)
 	c.JSON(http.StatusOK, books)
 }
 
